@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NexaChat</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="login" class="overlay">
+  <div class="login-card">
+    <div class="logo">N</div>
+    <h1>NexaChat</h1>
+    <p>Fast. Simple. Connected.</p>
+    <input id="name" maxlength="30" placeholder="Choose a display name" autocomplete="off">
+    <button id="enter">Enter NexaChat</button>
+  </div>
+</div>
+
+<div class="app">
+  <aside class="sidebar">
+    <header><div class="brand"><span class="mini-logo">N</span><b>NexaChat</b></div><button id="theme">☾</button></header>
+    <div class="search">⌕ <input placeholder="Search"></div>
+    <div class="profile"><div class="avatar" id="myAvatar">N</div><div><b id="myName">Guest</b><small>online</small></div></div>
+    <div class="section-title">LIVE CHAT</div>
+    <div class="chat-item active"><div class="avatar">🌐</div><div><b>Global Lounge</b><small id="preview">Welcome to NexaChat</small></div><span>now</span></div>
+    <div class="section-title">ONLINE NOW <em id="count">0</em></div>
+    <div id="people"></div>
+  </aside>
+
+  <main class="chat">
+    <header class="chat-head">
+      <div class="avatar">🌐</div>
+      <div><b>Global Lounge</b><small id="online">Connecting…</small></div>
+      <div class="actions">⌕ ⋮</div>
+    </header>
+    <section id="messages" class="messages"></section>
+    <div id="typing"></div>
+    <form id="composer">
+      <button type="button" class="attach">＋</button>
+      <input id="message" autocomplete="off" placeholder="Write a message…">
+      <button class="send">➤</button>
+    </form>
+  </main>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
